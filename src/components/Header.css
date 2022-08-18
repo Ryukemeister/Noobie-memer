@@ -1,0 +1,28 @@
+.nav {
+  height: 65px;
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+  display: flex;
+  align-items: center;
+  padding: 1.5px 20px;
+}
+
+.troll-face {
+  width: 31.31px;
+  height: 26px;
+  padding: 0 5px 0 0;
+}
+
+.nav-title {
+  margin: 0;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-right: auto;
+}
+
+.nav-description {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
