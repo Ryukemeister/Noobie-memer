@@ -1,4 +1,5 @@
 import React from "react";
+import memeData from "./memeData";
 import "./Meme.css";
 
 /*
@@ -9,50 +10,45 @@ import "./Meme.css";
           Get a new meme image
         </button>
     </form>
+
+     ...memeData.data.memes[randomNumber],
 */
+
 function Meme() {
-  const [siblings, setSiblings] = React.useState(["Abhishek Sharma"]);
-  const [count, setCount] = React.useState(0);
   const [inputValue, setInputValue] = React.useState("");
+  const [memeImage, setMemeImage] = React.useState(
+    "https://i.imgflip.com/30b1gx.jpg"
+  );
+  const [memeImageObject, setMemeImageObject] = React.useState({
+    id: "181913649",
+    name: "Drake Hotline Bling",
+    url: "https://i.imgflip.com/30b1gx.jpg",
+    width: 1200,
+    height: 1200,
+    box_count: 2,
+  });
 
-  const increaseCount = function () {
-    setCount((prevCount) => prevCount + 1);
-  };
+  console.table(memeImageObject);
 
-  const decreaseCount = function () {
-    setCount((prevCount) => prevCount - 1);
+  const getNewImage = function () {
+    const randomNumber = Math.floor(Math.random() * 100);
+    const url = memeData.data.memes[randomNumber].url;
+
+    setMemeImage(url);
+
+    setMemeImageObject((prevMemeImageObject) => {
+      return {
+        ...memeData.data.memes[randomNumber],
+      };
+    });
   };
 
   const trigger = function (name) {
     console.log("Clicked!");
   };
 
-  const siblingsElements = siblings.map((sibling) => (
-    <p key={sibling}>{sibling}</p>
-  ));
-
-  const addSiblings = function () {
-    let firstName = document.querySelector(".form-input-1").value;
-    let lastName = document.querySelector(".form-input-2").value;
-
-    const firstNameCaps =
-      firstName[0].toLocaleUpperCase() + firstName.slice(1).toLocaleLowerCase();
-    const lastNameCaps =
-      lastName[0].toLocaleUpperCase() + lastName.slice(1).toLocaleLowerCase();
-
-    setSiblings((prevSibling) => [
-      ...prevSibling,
-      `${firstNameCaps} ${lastNameCaps}`,
-    ]);
-
-    document.querySelector(".form-input").innerHTML = "";
-    console.log(`${firstNameCaps} ${lastNameCaps}`);
-  };
-
   return (
     <main>
-      {siblingsElements}
-
       <div className="meme-form">
         <input
           placeholder="Top-text"
@@ -64,9 +60,12 @@ function Meme() {
           className="form-input form-input-2"
           type="text"
         />
-        <button onClick={addSiblings} className="form-btn">
+        <button onClick={getNewImage} className="form-btn">
           Get a new meme image
         </button>
+      </div>
+      <div className="img">
+        <img className="meme-img" src={memeImage} alt="actual-meme-image" />
       </div>
     </main>
   );
