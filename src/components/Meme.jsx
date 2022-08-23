@@ -1,5 +1,5 @@
 import React from "react";
-import memeData from "./memeData";
+// import memeData from "./memeData";
 import "./Meme.css";
 
 /*
@@ -14,7 +14,8 @@ import "./Meme.css";
      ...memeData.data.memes[randomNumber],
 */
 
-function Meme() {
+function Meme({ incomingMeme, changeMeme }) {
+  /*
   const [inputValue, setInputValue] = React.useState("");
   const [memeImage, setMemeImage] = React.useState(
     "https://i.imgflip.com/30b1gx.jpg"
@@ -28,7 +29,7 @@ function Meme() {
     box_count: 2,
   });
 
-  console.table(memeImageObject);
+  // console.table(memeImageObject);
 
   const getNewImage = function () {
     const randomNumber = Math.floor(Math.random() * 100);
@@ -42,10 +43,7 @@ function Meme() {
       };
     });
   };
-
-  const trigger = function (name) {
-    console.log("Clicked!");
-  };
+*/
 
   return (
     <main>
@@ -60,12 +58,17 @@ function Meme() {
           className="form-input form-input-2"
           type="text"
         />
-        <button onClick={getNewImage} className="form-btn">
+        <button onClick={changeMeme} className="form-btn">
           Get a new meme image
         </button>
       </div>
+      <h1 className="meme-title">{incomingMeme.name}</h1>
       <div className="img">
-        <img className="meme-img" src={memeImage} alt="actual-meme-image" />
+        <img
+          className="meme-img"
+          src={incomingMeme.url}
+          alt="actual-meme-image"
+        />
       </div>
     </main>
   );

@@ -55,3 +55,7 @@ main {
   width: 600px;
   height: 400px;
 }
+
+.meme-title {
+  font-family: "Karla", sans-serif;
+}
