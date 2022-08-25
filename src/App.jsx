@@ -1,10 +1,9 @@
 import React from "react";
 import Header from "./components/Header";
 import Meme from "./components/Meme";
+import Form from "./components/Form";
 import memeData from "./components/memeData";
 import "./App.css";
-
-5 && ["Rajiv"] ? console.log("This is working") : "";
 
 function App() {
   const [memeImageObject, setMemeImageObject] = React.useState({
@@ -16,7 +15,9 @@ function App() {
     box_count: 2,
   });
 
-  const getNewImage = function () {
+  const getNewImage = function (e) {
+    e.preventDefault();
+
     const randomNumber = Math.floor(Math.random() * 100);
 
     setMemeImageObject((prevMemeImageObject) => {
@@ -30,6 +31,7 @@ function App() {
     <div className="App">
       <Header memeInfo={memeImageObject} />
       <Meme incomingMeme={memeImageObject} changeMeme={getNewImage} />
+      <Form />
     </div>
   );
 }

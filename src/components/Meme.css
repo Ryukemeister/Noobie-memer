@@ -6,6 +6,7 @@ main {
   display: grid;
   grid-template: 40px 40px /1fr 1fr;
   gap: 17px;
+  padding: 50px 20px 0 20px;
 }
 
 .form-input {
@@ -49,6 +50,7 @@ main {
   justify-content: center;
   align-items: center;
   padding: 40px 0 0 0;
+  display: none;
 }
 
 .meme-img {
@@ -58,4 +60,23 @@ main {
 
 .meme-title {
   font-family: "Karla", sans-serif;
+}
+
+.background-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 600px;
+  height: 400px;
+}
+
+.top-text,
+.bottom-text {
+  color: black;
 }
