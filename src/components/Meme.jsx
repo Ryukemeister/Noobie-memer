@@ -10,9 +10,12 @@ function Meme() {
   });
 
   React.useEffect(() => {
-    fetch("https://api.imgflip.com/get_memes").then((res) =>
-      res.json().then((data) => setMemesArray(data.data.memes))
-    );
+    async function getMemes() {
+      const res = await fetch("https://api.imgflip.com/get_memes");
+      const data = await res.json();
+      setMemesArray(data.data.memes);
+    }
+    getMemes();
   }, []);
 
   function handleClick(e) {
