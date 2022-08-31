@@ -8,12 +8,11 @@ export default function Form() {
     checkPassword: "",
     toJoin: false,
   });
+  // console.log(formInput);
 
-  function handleChange(e) {
-    // console.log(e);
-    // document.querySelector(".input-from-form").innerHTML = e.target.value;
+  function handleClick(event) {
+    const { name, value, checked, type } = event.target;
     setFormInput((prevFormInput) => {
-      const { name, type, value, checked } = e.target;
       return {
         ...prevFormInput,
         [name]: type === "checkbox" ? checked : value,
@@ -21,58 +20,67 @@ export default function Form() {
     });
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    // console.log(formInput);
-    formInput.password === formInput.checkPassword &&
-    formInput.password.length >= 1 &&
-    formInput.toJoin
-      ? alert(
-          "Successfully signed up, thanks for signing up for our newsletter!"
-        )
-      : alert(
-          "Not able to sign up, passwords do not match. Please check your passwords once again."
-        );
+  function handleSubmit(event) {
+    event.preventDefault();
+    if (
+      formInput.toJoin &&
+      formInput.password === formInput.checkPassword &&
+      formInput.password.length >= 1
+    ) {
+      setFormInput({
+        email: "",
+        password: "",
+        checkPassword: "",
+        toJoin: false,
+      });
+      alert(
+        "Successfully signed up, thanks for signing up for our newsletter!"
+      );
+    } else {
+      alert(
+        "Not able to sign in, passwords do not match. Please check your passwords once agin."
+      );
+    }
   }
 
   return (
     <div className="form-container">
       <form className="input-form" onSubmit={handleSubmit}>
         <input
-          className="form-input-name"
           placeholder="Email address"
           type="email"
           name="email"
-          onChange={handleChange}
           value={formInput.email}
+          onChange={handleClick}
+          className="form-input-name"
         />
         <input
-          className="form-input-name"
           placeholder="Password"
           type="password"
-          value={formInput.password}
           name="password"
-          onChange={handleChange}
+          value={formInput.password}
+          onChange={handleClick}
+          className="form-input-name"
         />
         <input
-          className="form-input-name"
           placeholder="Confirm password"
           type="password"
           name="checkPassword"
           value={formInput.checkPassword}
-          onChange={handleChange}
+          onChange={handleClick}
+          className="form-input-name"
         />
         <div className="form-marketing">
           <input
-            onChange={handleChange}
             name="toJoin"
             checked={formInput.toJoin}
             id="okayToEmail"
             type="checkbox"
+            onChange={handleClick}
           />
           <label htmlFor="okayToEmail">I want to join the newsletter</label>
         </div>
-        <button className="form--submit">Sign up</button>
+        <button className="form-submit">Sign up</button>
       </form>
     </div>
   );

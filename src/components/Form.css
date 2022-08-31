@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   background-color: #639;
+  display: none;
 }
 
 .input-form {
@@ -25,6 +26,7 @@
   border-radius: 5px;
   border: 1px solid gray;
   padding: 5px;
+  outline: none;
   font-family: "Inter", sans-serif;
 }
 
@@ -39,7 +41,7 @@
   color: white;
 }
 
-.form--submit {
+.form-submit {
   width: 50%;
   padding: 10px;
   border-radius: 5px;
