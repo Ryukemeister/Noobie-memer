@@ -6,7 +6,7 @@ function Header() {
     <nav className="nav">
       <img
         className="troll-face"
-        src="./public/Troll Face.png"
+        src="/Troll Face.png"
         alt="Navbar troll picture"
       />
       <h3 className="nav-title">Meme Generator</h3>
