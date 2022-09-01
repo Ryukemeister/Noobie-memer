@@ -46,35 +46,30 @@ main {
   height: 20px;
 }
 
-.img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 0 0 0;
-  display: none;
-}
-
-.meme-img {
-  width: 600px;
-  height: 400px;
-}
-
 .meme-title {
   font-family: "Karla", sans-serif;
 }
 
 .background-img {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-repeat: no-repeat;
+  width: 80vw;
+  height: 50vw;
+  border-radius: 3px;
   background-size: cover;
-  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
   margin: auto;
   margin-top: 50px;
   margin-bottom: 50px;
+  /* 
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+   align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 600px;
-  height: 400px;
+  height: 400px;*/
 }
 
 .top-text,

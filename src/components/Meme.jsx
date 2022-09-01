@@ -69,9 +69,6 @@ function Meme() {
         <h1 className="top-text">{memeText.topText}</h1>
         <h1 className="bottom-text">{memeText.bottomText}</h1>
       </div>
-      <div className="img">
-        <img className="meme-img" src={memeText.url} alt="actual-meme-image" />
-      </div>
     </div>
   );
 }
