@@ -51,6 +51,9 @@ main {
 }
 
 .background-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 80vw;
   height: 50vw;
   border-radius: 3px;
@@ -77,6 +80,7 @@ main {
   font-size: 2em;
   font-family: impact, sans-serif;
   text-transform: uppercase;
+  text-align: center;
   color: white;
   letter-spacing: 1px;
   text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
