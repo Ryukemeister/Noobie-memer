@@ -9,8 +9,7 @@ function Header() {
         src="/Troll Face.png"
         alt="Navbar troll picture"
       />
-      <h3 className="nav-title">Meme Generator</h3>
-      <h4 className="nav-description ">React Course - Project 3</h4>
+      <h3 className="nav-title">NOOBIE MEMER</h3>
     </nav>
   );
 }
